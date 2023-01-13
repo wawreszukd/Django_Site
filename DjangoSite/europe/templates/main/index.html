@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+        <title>Trips</title>
+    </head>
+    <body>
+        <h1>Europe Trips</h1>
+        <ul>
+            {% for trip in trips%}
+            <ul>{{trip}}</ul>
+            {% endfor%}
+        </ul>
+        <h1 id="test">Hello world</h1>
+        <button onclick="myFunc()" title="Test">Test</button>
+        <br>
+        <img src="{%static 'images/tower.jpg'%}" alt="Tower"style="width=120px;margin-bottom=-50px;height: 120px;">
+        <script src="{%static 'js/main.js'%}"></script>
+    </body>
+</html> 
