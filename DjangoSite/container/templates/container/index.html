@@ -1,0 +1,7 @@
+{% extends 'container/layout.html'%}
+{%block body%}
+    <a class="btn btn-primary" style="margin-left: 10px;margin-top: 10px;"  href="{% url 'europes:europe' %}">europe</a>
+    <a class="btn btn-primary" style="margin-left: 10px;margin-top: 10px;"  href="{% url 'hello:hello' %}">hello</a>
+    <a class="btn btn-primary" style="margin-left: 10px;margin-top: 10px;"  href="{% url 'newyears:newyear' %}">newyear</a>
+    <a class="btn btn-primary" style="margin-left: 10px;margin-top: 10px;"  href="{% url 'tasks:tasks' %}">tasks</a>
+{%endblock%}

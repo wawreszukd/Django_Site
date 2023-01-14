@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from europe import views
-from hello import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('europe/',include('europe.urls')),
     path('hello/',include('hello.urls')),
+    path("newyear/",include('newyear.urls')),
+    path("tasks/",include("tasks.urls")),
     path("",include('container.urls'))
 ]

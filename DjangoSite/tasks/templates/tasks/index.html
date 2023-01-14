@@ -1,0 +1,14 @@
+{% extends "tasks/layout.html" %}
+{% block body %}
+    <div class="container">
+        <ul class="list-group">
+            {%for task in tasks%}
+            <li class="list-group-item">
+                {{task}}
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{%url 'tasks:add'%}"><button style="width:100%;"class="btn btn-primary">add</button></a>
+    </div>
+
+{% endblock %}

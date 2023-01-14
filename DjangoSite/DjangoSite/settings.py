@@ -32,9 +32,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tasks',
     'container',
     'hello',
     'europe',
+    'newyear',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +60,13 @@ ROOT_URLCONF = 'DjangoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),
+                 os.path.join(BASE_DIR,'europe','templates'),
+                 os.path.join(BASE_DIR,'container','templates'),
+                 os.path.join(BASE_DIR,'hello','templates'),
+                 os.path.join(BASE_DIR,'newyear','templates'),
+                 os.path.join(BASE_DIR,'tasks','templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

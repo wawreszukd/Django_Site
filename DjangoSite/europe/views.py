@@ -4,7 +4,7 @@ from .models import Trip
 # Create your views here.
 
 def index(request):
-    template = "main/index.html"
+    template ="europe/index.html"
     context={
         "trips": Trip.objects.all(),
 
