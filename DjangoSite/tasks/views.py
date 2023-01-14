@@ -8,7 +8,7 @@ class newTaskForm(forms.Form):
 def index(request):
     tasks = models.Tasks.objects.all()
     context = {
-        "tasks": tasks
+        "tasks": tasks,
     }
     return render(request,'tasks/index.html',context=context)
 def add(request):
@@ -27,3 +27,8 @@ def add(request):
         "form": newTaskForm()
     }
     return render(request,'tasks/add.html',context=context)
+def delete(request,id):
+    task = models.Tasks.objects.get(id=id)
+    print(f"{id}")
+    task.delete()
+    return redirect("tasks:tasks")

@@ -4,7 +4,8 @@
         <ul class="list-group">
             {%for task in tasks%}
             <li class="list-group-item">
-                {{task}}
+                <a href="delete/{{task.id}}"><button class="btn btn-danger">DEL</button></a>
+                {{task.task}}
             </li>
             {% endfor %}
         </ul>

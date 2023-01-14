@@ -7,8 +7,12 @@ def index(request):
         context = {
             "newyear": "Yes"
             }
-    else:
+    elif(time.day==14 and time.month==1):
         context = {
+            "newyear": "Yes but orthodox"
+        }
+    else:
+        context= {
             "newyear": "No"
         }
     return render(request,"newyear/index.html",context=context)

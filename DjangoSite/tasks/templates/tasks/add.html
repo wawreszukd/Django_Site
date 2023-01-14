@@ -1,6 +1,6 @@
 {% extends "tasks/layout.html" %}
 {% block body %}
-<div class="formDiv">
+<div class="formDiv container">
     <form action="{% url 'tasks:add'%}" method="post">
         {%csrf_token%}
         <div class="form-group">
