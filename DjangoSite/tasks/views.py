@@ -6,7 +6,9 @@ class newTaskForm(forms.Form):
     task = forms.CharField(label="New Task")
 
 def index(request):
-    tasks = models.Tasks.objects.all()
+    
+    tasks = models.Tasks.objects.filter(session= request.session['_auth_user_hash'])
+    
     context = {
         "tasks": tasks,
     }
@@ -16,7 +18,7 @@ def add(request):
         form = newTaskForm(request.POST)
         if form.is_valid():
             task = form.cleaned_data["task"]
-            t = models.Tasks(task=task)
+            t = models.Tasks(task=task, session=request.session['_auth_user_hash'])
             t.save()
             return redirect('tasks:tasks')
         else:
@@ -28,7 +30,7 @@ def add(request):
     }
     return render(request,'tasks/add.html',context=context)
 def delete(request,id):
-    task = models.Tasks.objects.get(id=id)
+    task = models.Tasks.objects.filter(id=id)
     print(f"{id}")
     task.delete()
     return redirect("tasks:tasks")
