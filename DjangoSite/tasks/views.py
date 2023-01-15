@@ -3,7 +3,7 @@ from django import forms
 from . import models
 # Create your views here.
 class newTaskForm(forms.Form):
-    task = forms.CharField(label="New Task")
+    task = forms.CharField(label="")
 
 def index(request):
     
@@ -29,6 +29,20 @@ def add(request):
         "form": newTaskForm()
     }
     return render(request,'tasks/add.html',context=context)
+def update(request, id):
+    if request.method == "POST":
+        form = newTaskForm(request.POST)
+        if form.is_valid():
+            task = form.cleaned_data["task"]
+            t = models.Tasks.objects.filter(id=id)
+            t.update(task=task)
+            return redirect('tasks:tasks')
+        return render(request,'tasks/update.html',{
+            "form": form
+        })
+    return render(request, 'tasks/update.html',{
+        "form": newTaskForm()
+    })
 def delete(request,id):
     task = models.Tasks.objects.filter(id=id)
     print(f"{id}")

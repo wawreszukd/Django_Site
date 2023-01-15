@@ -5,6 +5,7 @@
             {%for task in tasks%}
             <li class="list-group-item">
                 <a href="delete/{{task.id}}"><button class="btn btn-danger">DEL</button></a>
+                <a href="update/{{task.id}}"><button class="btn btn-primary">UPDATE</button></a>
                 {{task.task}}
             </li>
             {% endfor %}

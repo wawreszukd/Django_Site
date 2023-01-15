@@ -4,5 +4,6 @@ app_name="tasks"
 urlpatterns = [
     path("",views.index,name="tasks"),
     path("add",views.add,name="add"),
-    path("delete/<int:id>",views.delete, name="delete")
+    path("delete/<int:id>",views.delete, name="delete"),
+    path("update/<int:id>",views.update, name="update")
 ]

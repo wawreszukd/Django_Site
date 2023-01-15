@@ -1,0 +1,14 @@
+{% extends "tasks/layout.html" %}
+{% block body %}
+<div class="formDiv container">
+    <form action="{{id}}" method="post">
+        {%csrf_token%}
+        <div class="form-group">
+        <label for="taskInput">Update task</label>
+        {{form}}
+        <small id="addTaskHelp" class="form-text text-muted">Enter your task here</small>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
